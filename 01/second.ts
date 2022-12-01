@@ -15,5 +15,9 @@ const elfTotals = elfs.map((ec) =>
     .reduce(sum, 0)
 );
 
-const max = Math.max(...elfTotals);
-console.log(`RESULT ${elfTotals.indexOf(max) + 1} ${max}`);
+const sortedElfs = elfTotals.sort((a, b) => b - a);
+
+const [first, second, third, ...rest] = sortedElfs;
+
+console.log(`RESULT ${first + second + third}`);
+// console.log(`RESULT ${elfTotals.indexOf(max) + 1} ${max}`);
