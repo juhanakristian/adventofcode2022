@@ -22,14 +22,12 @@ function findBadge(a: string, b: string, c: string) {
   return "";
 }
 
-const badges: string[] = [];
+let result = 0;
 for (let i = 0; i < rugsacks.length; i += 3) {
   const a = rugsacks[i];
   const b = rugsacks[i + 1];
   const c = rugsacks[i + 2];
-  badges.push(findBadge(a, b, c));
+  result += priority(findBadge(a, b, c));
 }
 
-const scores = badges.map((c) => priority(c));
-const result = scores.reduce((a, b) => a + b, 0);
 console.log(`RESULT ${result}`);
